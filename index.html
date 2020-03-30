@@ -16,7 +16,57 @@
   <title>Weather Dashboard</title>
 </head>
 <body>
-
+    <!--Logo and header-->
+    <nav class="navbar navbar-default" id="nav_bar"> 
+        <div id="navheader" class="navbar-header">
+          <img  class="logo" src="./img/logo.png" alt="sun and cloud"><strong>Weather Dashbord</strong>
+        </div>
+            </nav>
+            <!--Header Img and Text-->
+        <div class="row" id = "header"> 
+          <div class="col-md-12" id="headpic">
+            <h2 id="head1text" class="headtext1"> Weather  Dashboard for getting weather Information</h2>
+            <h2 id="head2text" class="headtext2"> Get Weather Information of Your City</h2>
+          </div>
+        </div>
+         <!--Area to find and show weather -->
+        <div id="container">
+          <div class="row">
+              <!--City search area -->
+             <div id="citydiv" class="col col-md-4">
+               <h3 class="citytext">Search for a City:</h3>
+               <div id="searchcity formgroup form-inline" id="citydiv">
+                   <!--search input-->
+                <input type="text" name="city" id="city-input" class="form-control" placeholder="Enter City name">
+                <button type="submit" id="seacrhbtn"><i class="fa fa-search"></i></button> 
+                <!--showing error-->         
+               <div id="error"></div>
+                <!--displaying search city-->
+               <div class="card-body">               
+                <div class=" lead mb-3">Your Resent Search Cities</div>              
+                <ul class="list-group ">
+                    <li id="city-name"class="list-group-item display:none ">                       
+                    </li>                  
+                </ul>    
+            </div>
+            </div>
+          </div>
+            <!--displaying current weather-->
+     <div class="col col-md-8">
+        <div class="row">
+          <div class="col col-md-12">
+         <div id="showweather" ></div>
+          </div>
+          <!--display 5 day weather-->
+          <div class="col col-md-12">
+ 
+          </div>
+        </div>
+ 
+     </div>
+   </div>
+ 
+ </div>
 
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
