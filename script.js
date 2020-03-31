@@ -1,4 +1,41 @@
 
+function getweather(city){
+    // Querying the weather api for the selected city, the ?app_id parameter is required, but can equal anything
+    var queryURL="http://api.openweathermap.org/data/2.5/weather?q="+city+ "&units=imperial" + "&APPID=cd9a537cb0b8a066e19b9065531d35d3";
+    // Creating an AJAX call for the specific movie button being clicked
+    $.ajax({
+        url: queryURL,
+        method: "GET"
+      }).then(function(response) {
+     // Printing the entire object to console
+        console.log(response);
+         // Constructing HTML containing the weather information
+         var cityName =$("<h2>").text(response.name);
+         var date = $("<h3>").text(response.dt*1000);
+         var temperature = $("<p>").text("Temperature: " +(response.main.temp_min) +"&deg;F");
+         var humiDity = $("<p>").text("Humidity:  " + ( response.main.humidity) +"%");
+         var windspeed = $("<p>").text("WindSpeed: " + (response.wind.speed) +"MPH");
+         var uv = $("<p>").text("WindSpeed: " + (response.wind.speed) +"MPH");
+        
+         $("#showweather").empty();
+         $("#showweather").append(cityName, date,temperature, humiDity,windspeed,uv);
+         
+
+      });
+
+}
+$("#seacrhbtn").click(function(event){ 
+    //prevents the form from trying to submit itself.
+        // We're using a form so that the user can hit enter instead of clicking the button if they want
+    event.preventDefault();
+    var inputcity =$("#city-input").val().trim();
+   // cities.push(city);
+  //  searchcity();
+  getweather(inputcity);
+
+});
+
+/*
 $(document).ready(function(){
     $("#seacrhbtn").click(function(){ 
      
@@ -32,4 +69,4 @@ function showResults(data){
            "<p>UV Index:  "+ data.main.temp +"  </p>"
     ;
 
-}
+}*/
