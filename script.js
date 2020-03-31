@@ -19,14 +19,19 @@ function getWeather(city) {
         var uv = $("<p>").text("WindSpeed: " + (response.wind.speed) + "MPH");
         $("#showweather").empty();
         $("#showweather").append(cityName, date, temperature, humiDity, windspeed, uv);
+    //    renderUV(response.coord.lat, response.coord.lon);
         renderCities(response.name);
     });
 }
-
+/*
+function renderUV(lat, lon){
+    var uv = $("<p>").text("WindSpeed: " + (response.wind.speed) + "MPH");
+}
+*/
 function renderCities(city) {
-    cityAdd = $("<div>");
+    cityAdd = $("<li>").addClass("listStyle");
     cityAdd.text(city);
-    $("#cityList").append(cityAdd);
+    $("#cityList").prepend(cityAdd);
 }
 
 $("#searchbtn").click(function (event) {
