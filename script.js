@@ -13,12 +13,13 @@ function getWeather(city) {
         // Constructing HTML containing the weather information
         var cityName = $("<h1>").text(response.name);
         let date = new Date().toISOString().slice(0, 10);
+        var dateFiled =$("<h4>").text(date);
         var temperature = $("<p>").text("Temperature: " + (response.main.temp_min) + "F");
         var humiDity = $("<p>").text("Humidity:  " + (response.main.humidity) + "%");
         var windspeed = $("<p>").text("WindSpeed: " + (response.wind.speed) + "MPH");
         var uv = $("<p>").text("WindSpeed: " + (response.wind.speed) + "MPH");
         $("#showweather").empty();
-        $("#showweather").append(cityName, date, temperature, humiDity, windspeed, uv);
+        $("#showweather").append(cityName, dateFiled, temperature, humiDity, windspeed, uv);
     //    renderUV(response.coord.lat, response.coord.lon);
         renderCities(response.name);
     });
