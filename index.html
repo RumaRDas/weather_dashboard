@@ -2,82 +2,80 @@
 <html lang="en">
 
 <head>
-  <!-- Required meta tags -->
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <!--inner css link-->
-  <link rel="stylesheet" href="./style.css">
-  <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!--inner css link-->
+    <link rel="stylesheet" href="./style.css">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <!--Font Awsom link-->
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
-    integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
-  <title>Weather Dashboard</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
+    <title>Weather Dashboard</title>
 </head>
+
 <body>
     <!--Logo and header-->
-    <nav class="navbar navbar-default" id="nav_bar"> 
+    <nav class="navbar navbar-default" id="nav_bar">
         <div id="navheader" class="navbar-header">
-          <img  class="logo" src="./img/logo.png" alt="sun and cloud"><strong>Weather Dashbord</strong>
+            <img class="logo" src="./img/logo.png" alt="sun and cloud"><strong>Weather Dashbord</strong>
         </div>
-            </nav>
-            <!--Header Img and Text-->
-        <div class="row" id = "header"> 
-          <div class="col-md-12" id="headpic">
-            <h2 id="head1text" class="headtext1"> Weather  Dashboard for getting weather Information</h2>
+    </nav>
+    <!--Header Img and Text-->
+    <div class="row" id="header">
+        <div class="col-md-12" id="headpic">
+            <h2 id="head1text" class="headtext1"> Weather Dashboard for getting weather Information</h2>
             <h2 id="head2text" class="headtext2"> Get Weather Information of Your City</h2>
-          </div>
         </div>
-         <!--Area to find and show weather -->
-        <div id="container">
-          <div class="row">
-              <!--City search area -->
-             <div id="citydiv" class="col col-md-4">
-               <h3 class="citytext">Search for a City:</h3>
-               <div id="searchcity formgroup form-inline" id="citydiv">
-                   <!--search input-->
-                <input type="text" name="city" id="city-input" class="form-control" placeholder="Enter City name">
-                <button type="submit" id="seacrhbtn"><i class="fa fa-search"></i></button> 
-                <!--showing error-->         
-               <div id="error"></div>
-                <!--displaying search city-->
-               <div class="card-body">               
-                <div class=" lead mb-3">Your Resent Search Cities</div>              
-                <ul class="list-group ">
-                    <li id="city-name"class="list-group-item display:none ">                       
-                    </li>                  
-                </ul>    
-            </div>
-            </div>
-          </div>
-            <!--displaying current weather-->
-     <div class="col col-md-8">
+    </div>
+    <!--Area to find and show weather -->
+    <div id="container">
         <div class="row">
-          <div class="col col-md-12">
-         <div id="showweather" ></div>
-          </div>
-          <!--display 5 day weather-->
-          <div class="col col-md-12">
- 
-          </div>
-        </div>
- 
-     </div>
-   </div>
- 
- </div>
+            <!--City search area -->
+            <div id="citydiv" class="col col-md-4">
+                <h3 class="citytext">Search for a City:</h3>
+                <div id="searchcity formgroup form-inline" id="citydiv">
+                    <!--search input-->
+                    <input type="text" name="city" id="city-input" class="form-control" placeholder="Enter City name">
+                    <button type="submit" id="searchbtn"><i class="fa fa-search"></i></button>
+                    <!--showing error-->
+                    <div id="error"></div>
+                    <!--displaying search city-->
+                    <div class="card-body">
+                        <div class=" lead mb-3">Your Resent Search Cities</div>
+                        <ul class="list-group " id="cityList"></ul>
+                    </div>
+                </div>
+            </div>
+            <!--displaying current weather-->
+            <div class="col col-md-8">
+                <div class="row">
+                    <div class="col col-md-12">
+                        <div id="showweather"></div>
+                    </div>
+                    <!--display 5 day weather-->
+                    <div class="col col-md-12">
 
-  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-    crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
-    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
-    crossorigin="anonymous"></script>
-  <!--inner js link-->
-  <script src="./script.js"></script>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+    <!--inner js link-->
+    <script src="./script.js"></script>
 </body>
 
 </html>
