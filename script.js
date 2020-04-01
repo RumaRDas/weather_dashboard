@@ -4,7 +4,7 @@ const apiKey = "&appid=cd9a537cb0b8a066e19b9065531d35d3";
 function getWeather(city) {
 
     // Querying the weather api for the selected city, the ?app_id parameter is required, but can equal anything
-    var queryURL = "http://api.openweathermap.org/data/2.5/weather?q=" + city + "&units=imperial" + apiKey;
+    var queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&units=imperial" + apiKey;
     // Creating an AJAX call for the specific movie button being clicked
     $.ajax({
         url: queryURL,
@@ -27,8 +27,12 @@ function getWeather(city) {
         renderCities(response.name);
     });
 }
+function renderUV(city){
 
-//http://openweathermap.org/img/wn/10d@2x.png
+    var queryURL = "http://api.openweathermap.org/data/2.5/uvi/forecast?lat=37.75&lon=-122.37"
+
+}
+//api.openweathermap.org/data/2.5/uvi/history?lat=37.75&lon=-122.37&start=1498049953&end=1498481991
 /*
 function renderUV(lat, lon){
     var uv = $("<p>").text("WindSpeed: " + (response.wind.speed) + "MPH");
@@ -67,20 +71,10 @@ function fiveDaysWeather(city) {
         url: fiveQueryURL,
         method: "GET",
         dataType:"jsonp",
-    }).then(function (data) {
+    }).then(function (response) {
         // Printing the entire object to console
-        console.log(data);
-        var wf = "";
-       // City (displays once)
-        $.each(data.list, function(index, val) {
-          wf += "<p>" // Opening paragraph tag
-          wf += "<b>Day " + index + "</b>: " // Day
-          wf += val.main.temp + "&degC" // Temperature
-          wf += "<span> | " + val.weather[0].description + "</span>"; // Description
-          wf += "<img src='https://openweathermap.org/img/w/" + val.weather[0].icon + ".png'>" // Icon
-          wf += "</p>" // Closing paragraph tag
-        });
-      /*  let weatherlist = data.list;
+        console.log(response);
+         /*  let weatherlist = data.list;
    
       for (let i=0; i< weatherlist.length; i++){
         var weatherDesc =$("<div class ='descrStyle'>");
@@ -95,7 +89,6 @@ function fiveDaysWeather(city) {
  
       }
 */
-$("#fiveDya").html(wf);
-    
-    });
-}
+        });
+
+    }
