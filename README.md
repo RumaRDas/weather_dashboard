@@ -4,7 +4,7 @@
 ## WEATHER DASHBOARD is a website that can give current weather output according to users input city  with current Date .The page ues feature by dynamically updated HTML and CSS powered by JavaScript code and jqueryize site. nad for weather for cast openweathermap.org/api is used.
 
 ## View THis Page 
-[Workday Scheduler](https://rumardas.github.io/weather_dashboard/.)
+[WEATHER DASHBOARD](https://rumardas.github.io/weather_dashboard/.)
 
 ## Application Uses in this Projects
 * Javascript
@@ -24,8 +24,8 @@
     * Humidity in %
     * WindSpeed m/s
     * UV(Still Working)
-* And also five days weather will come(Still working)
-* Clicking the city button The weather will show again(Still working)
+* And also five days weather will come
+* Clicking the city button The weather will show again
 
 
 ## Pages  view

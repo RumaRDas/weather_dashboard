@@ -34,7 +34,7 @@
     <div id="container">
         <div class="row">
             <!--City search area -->
-            <div id="citydiv" class="col col-md-4">
+            <div id="citydiv" class="col col-md-4 col-sm-12">
                 <h3 class="citytext">Search for a City:</h3>
                 <div id="searchcity formgroup form-inline" id="citydiv">
                     <!--search input-->
@@ -50,26 +50,22 @@
                 </div>
             </div>
             <!--displaying current weather-->
-            <div class="col col-md-8">
+            <div class="col col-md-8 col-sm-8">
                 <div class="row">
                     <div class="col col-md-12">
                         <div id="showweather" class="currentStyle"></div>
                     </div>
-                    <!--display 5 day weather-->
-                    <div class="col col-md-12">
-                        <h3 class="new">5-Day Forecast:</h3>
-                    
-                        <div id="fiveDyas" class="col"></div>
-                        <div id="fiveDyas" class="col"></div>
-                        <div id="fiveDyas" class="col"></div>
-                        <div id="fiveDyas" class="col"></div>
-                        <div id="fiveDyas" class="col"></div>
-
-                    </div>
                 </div>
-
+                <!--display 5 day weather-->
+                <div class="row">
+                    <h2 class="new">5-Day Forecast:</h2>
+                    <div class="row newrow" id="fiveDays"></div>
+                </div>
             </div>
+
+
         </div>
+    </div>
 
     </div>
 
