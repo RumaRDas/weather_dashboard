@@ -30,11 +30,11 @@
 
 ## Pages  view
 ## Desktop View
-![Test Image 1]()
+![Test Image 1]((./img/desktop_view.png))
 ## Ipad View
-![Test Image 2]()
+![Test Image 2]((./img/ipad_view.png))
 ## Iphone View
-![Test Image 2]()
+![Test Image 2]((./img/iphone_view.png))
 ## Font Decoration 
 
 * For font decoration uses I used google font 

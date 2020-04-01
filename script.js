@@ -85,7 +85,7 @@ function fiveDaysWeather(city) {
         for (let i = 0; i < weatherlist.length; i++) {
 
             const listindex = i * 8 + 4;
-            var weatherDesc = $("<div class ='col col-md-2 descrStyle'>");
+            var weatherDesc = $("<div class =' descrStyle'>");
             let date = new Date(response.list[listindex].dt * 1000).toISOString().slice(0, 10);
             var newdate = $("<p class='date'>").text(date);
             var newimage = $("<img src='https://openweathermap.org/img/wn/" + response.list[listindex].weather[0].icon + ".png'>").addClass("imgSize");
