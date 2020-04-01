@@ -16,7 +16,7 @@ function getWeather(city) {
         var cityName = $("<h1>").text(response.name);
         let date = new Date().toISOString().slice(0, 10);
         var dateFiled =$("<h4>").text(date);
-        var image = $("<img src='http://openweathermap.org/img/wn/"+response.weather[0].icon+".png'>").addClass("imgSize");
+        var image = $("<img src='https://openweathermap.org/img/wn/"+response.weather[0].icon+".png'>").addClass("imgSize");
         var temperature = $("<p>").text("Temperature: " + (response.main.temp) + " F");
         var humiDity = $("<p>").text("Humidity:  " + (response.main.humidity) + " %");
         var windspeed = $("<p>").text("WindSpeed: " + (response.wind.speed) + " m/s");   
@@ -29,7 +29,7 @@ function getWeather(city) {
 }
 function renderUV(city){
 
-    var queryURL = "http://api.openweathermap.org/data/2.5/uvi/forecast?lat=37.75&lon=-122.37"
+    var queryURL = "https://api.openweathermap.org/data/2.5/uvi/forecast?lat=37.75&lon=-122.37"
 
 }
 //api.openweathermap.org/data/2.5/uvi/history?lat=37.75&lon=-122.37&start=1498049953&end=1498481991
@@ -65,7 +65,7 @@ $(".listStylen").click(function (event) {
 //getting weather for 5 days
 function fiveDaysWeather(city) {
   
-    var queryURL = "http://api.openweathermap.org/data/2.5/forecast?q=" + city + "&units=imperial" + apiKey;
+    var queryURL = "https://api.openweathermap.org/data/2.5/forecast?q=" + city + "&units=imperial" + apiKey;
 
     $.ajax({
         url: queryURL,
@@ -83,7 +83,7 @@ function fiveDaysWeather(city) {
         var weatherDesc =$("<div class =' descrStyle'>");
         let date = new Date( response.list[listindex].dt*1000).toISOString().slice(0, 10);
         var newdate =$("<h4>").text(date);
-        var newimage = $("<img src='http://openweathermap.org/img/wn/"+response.list[listindex].weather[0].icon+".png'>").addClass("imgSize");
+        var newimage = $("<img src='https://openweathermap.org/img/wn/"+response.list[listindex].weather[0].icon+".png'>").addClass("imgSize");
         var newTemperature = $("<p>").text("Temperature: " + (response.list[listindex].main.temp) + " F");
         var newHumiDity = $("<p>").text("Humidity:  " + (response.list[listindex].main.humidity) + " %");
       
