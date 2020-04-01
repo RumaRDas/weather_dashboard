@@ -50,6 +50,7 @@ $("#searchbtn").click(function (event) {
     event.preventDefault();
     var inputCity = $("#city-input").val().trim();
     getWeather(inputCity);
+    $(".new").show();
     fiveDaysWeather(inputCity);
 });
 
@@ -63,32 +64,34 @@ $(".listStylen").click(function (event) {
 
 //getting weather for 5 days
 function fiveDaysWeather(city) {
- var days =5;
-    // Querying the weather api for the 5 days selected city, the ?app_id parameter is required, but can equal anything
-    var fiveQueryURL = "http://api.openweathermap.org/data/2.5/forecast?q=" + city + "&units=imperial" + apiKey;
-    // Creating an AJAX call for the specific movie button being clicked
+  
+    var queryURL = "http://api.openweathermap.org/data/2.5/forecast?q=" + city + "&units=imperial" + apiKey;
+
     $.ajax({
-        url: fiveQueryURL,
+        url: queryURL,
         method: "GET",
         dataType:"jsonp",
     }).then(function (response) {
         // Printing the entire object to console
         console.log(response);
-         /*  let weatherlist = data.list;
+
+      let weatherlist = response.list;
    
       for (let i=0; i< weatherlist.length; i++){
-        var weatherDesc =$("<div class ='descrStyle'>");
-        let date = new Date().toISOString().slice(0, 10);
+          
+        const listindex =i*8 +4;
+        var weatherDesc =$("<div class =' descrStyle'>");
+        let date = new Date( response.list[listindex].dt*1000).toISOString().slice(0, 10);
         var newdate =$("<h4>").text(date);
-        //var newimage = $("<img src='http://openweathermap.org/img/wn/"+data.weather[0].icon+".png'>").addClass("imgSize");
-        var newTemperature = $("<p>").text("Temperature: " + (data.list.main.temp) + " F");
-        var newHumiDity = $("<p>").text("Humidity:  " + (response.main.humidity) + " %");
+        var newimage = $("<img src='http://openweathermap.org/img/wn/"+response.list[listindex].weather[0].icon+".png'>").addClass("imgSize");
+        var newTemperature = $("<p>").text("Temperature: " + (response.list[listindex].main.temp) + " F");
+        var newHumiDity = $("<p>").text("Humidity:  " + (response.list[listindex].main.humidity) + " %");
       
         weatherDesc.append(newdate,newimage,newTemperature,newHumiDity);
         $("#fiveDyas").append(weatherDesc);
  
       }
-*/
+
         });
 
     }
