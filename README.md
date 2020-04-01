@@ -1,3 +1,50 @@
 # WEATHER DASHBOARD
 
-## [Link](https://rumardas.github.io/weather_dashboard/.)
+# jquery
+## WEATHER DASHBOARD is a website that can give current weather output according to users input city  with current Date .The page ues feature by dynamically updated HTML and CSS powered by JavaScript code and jqueryize site. nad for weather for cast openweathermap.org/api is used.
+
+## View THis Page 
+[Workday Scheduler](https://rumardas.github.io/weather_dashboard/.)
+
+## Application Uses in this Projects
+* Javascript
+* jquery
+* Bootstrap
+* Html
+* CSS
+
+## WEATHER DASHBOARD 
+* I input box users need to give a city name.
+* That input city is appending as a button undernith
+* Weather output will come
+    * City name
+    * Image icone
+    * Current Date
+    * Temperature in F
+    * Humidity in %
+    * WindSpeed m/s
+    * UV(Still Working)
+* And also five days weather will come(Still working)
+* Clicking the city button The weather will show again(Still working)
+
+
+## Pages  view
+## Desktop View
+![Test Image 1]()
+## Ipad View
+![Test Image 2]()
+## Iphone View
+![Test Image 2]()
+## Font Decoration 
+
+* For font decoration uses I used google font 
+* link for that [https://fonts.googleapis.com/css?family=Bangers]
+* For weather forcast 
+* link for that [https://openweathermap.org/api/uvi]
+
+## Attribution
+* [https://stackoverflow.com]
+* [https://getbootstrap.com/docs/]
+* [https://www.w3schools.com/bootstrap4/default.asp]
+* [https://openweathermap.org/api/uvi]
+* [https://www.youtube.com]
